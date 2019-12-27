@@ -1,8 +1,4 @@
-## Identifying Technology Stack
-
-
+# Identifying Technology Stack
 
 * Job openings
-
-
 

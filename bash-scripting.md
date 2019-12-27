@@ -1,10 +1,10 @@
 # Bash-scripting
 
-## Iterate over a file
+## Iterate over a file <a id="iterate-over-a-file"></a>
 
 This script will iterate over a file and echo out every single line:
 
-```bash
+```text
 #!/bin/bash
 
 for line in $(cat file.txt);do
@@ -14,7 +14,7 @@ done
 
 Another way of writing is this:
 
-```bash
+```text
 #!/bin/bash
 
 while read p; do
@@ -22,9 +22,9 @@ while read p; do
 done <file.txt
 ```
 
-## For-loops
+## For-loops <a id="for-loops"></a>
 
-```bash
+```text
 #!/bin/bash
 
 for ((i = 0; i < 10; i++)); do
@@ -34,7 +34,7 @@ done
 
 Another way to write this is by using the program `seq`. Seq is pretty much like `range()` in python. So it can be used like this:
 
-```bash
+```text
 #!/bin/bash
 
 for x in `seq 1 100`; do
@@ -42,20 +42,20 @@ for x in `seq 1 100`; do
 done
 ```
 
-## If statement
+## If statement <a id="if-statement"></a>
 
 `$1` here represent the first argument.
 
-```bash
+```text
 
 if [ "$1" == "" ]; then
     echo "This happens"
 fi
 ```
 
-## If/Else
+## If/Else <a id="ifelse"></a>
 
-```bash
+```text
 #!/bin/bash
 
 if [ "$1" == "" ]; then
@@ -65,23 +65,23 @@ else
 fi
 ```
 
-
-## Command line arguments
+## Command line arguments <a id="command-line-arguments"></a>
 
 Command line arguments are represented like this
 
-```bash
+```text
 #!/bin/bash
 
 $1
 ```
+
 This is the first command line argument.
 
-## Daemonize an execution
+## Daemonize an execution <a id="daemonize-an-execution"></a>
 
 If you do a ping-sweep with host the command will take about a second to complete. And if you run that against 255 hosts I will take a long time to complete. To avoid this we can just deamonize every execution to make it faster. We use the `&` to daemonize it.
 
-```bash
+```text
 #!/bin/bash
 
 for ip in $(cat ips.txt); do
@@ -89,14 +89,13 @@ for ip in $(cat ips.txt); do
 done
 ```
 
-
-## Use the output of command
+## Use the output of command <a id="use-the-output-of-command"></a>
 
 It has happened to me several times that I want to input the output of a command into a new command, for example:
 
 I search for a file, find three, and take the last line, which is a path. Now I want to cat that path:
 
-```bash
+```text
 #!/bin/bash
 
 locate 646.c | tail -n 1
@@ -104,10 +103,9 @@ locate 646.c | tail -n 1
 
 This can be done like this:
 
-```bash
+```text
 #!/bin/bash
 
 cat $(locate 646.c | tail -n 1)
 ```
-
 

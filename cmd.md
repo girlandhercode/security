@@ -1,53 +1,52 @@
-# CMD - Windows commands
+# CMD
 
+## CMD - Windows commands <a id="cmd---windows-commands"></a>
 
 The equivalent to the Linux command `;` as in
 
-```
+```text
 echo "command 1" ; echo "command 2"
 ```
 
 is
 
-```
+```text
 dir & whoami
 ```
 
-### Dealing with files and stuff
+### Dealing with files and stuff <a id="dealing-with-files-and-stuff"></a>
 
 **Delete file**
 
-```
+```text
 del
 ```
 
 **Create folder/directory**
 
-```
+```text
 md folderName
 ```
 
 **Show hidden files**
 
-```
+```text
 dir /A
 ```
 
 **Print out file content, like cat**
 
-```
+```text
 type file.txt
 ```
 
 **grep files**
 
-```
+```text
 findstr file.txt
 ```
 
-
-
-### Network
+### Network <a id="network"></a>
 
 **Show network information**
 
@@ -57,16 +56,15 @@ findstr file.txt
 
 `ipconfig`
 
-**Ping another machine** 
+**Ping another machine**
 
-`ping 192.168.1.101` 
+`ping 192.168.1.101`
 
 **Traceroute**
 
 `tracert`
 
-
-### Processes
+### Processes <a id="processes"></a>
 
 **List processes**
 
@@ -76,9 +74,9 @@ findstr file.txt
 
 `taskkill /PID 1532 /F`
 
-### Users
+### Users <a id="users"></a>
 
-```
+```text
 net users
 
 # Add user
@@ -92,45 +90,46 @@ net localgroup /domain
 net users /domain
 ```
 
-### Other
+### Other <a id="other"></a>
 
 **Shutdown**
 
-```
+```text
  # Shutdown now
  shutdown /s /t 0
- 
+
  # Restart
  shutdown /r /t 0
- ```
- 
+```
+
  **ciper - Clear data/shred**
- 
- ```
+
+```text
  Shreds the whole machine
  ciper /w:C:\
- ```
- 
+```
+
 **Show environmental variables**
 
-```
+```text
 set
 ```
 
 **Show options for commands**
 
 The "man"-pages in windows is simply:
-```
+
+```text
 help dir
 ```
 
-### Mounting - Mapping
+### Mounting - Mapping <a id="mounting---mapping"></a>
 
 In the windows world mounting is called mapping.
 
 If you want to see which drives are mapped/mounted to your file-system you can use any of these commands:
 
-```
+```text
 # This is the most thorough
 wmic logicaldisk get deviceid, volumename, description
 
@@ -154,18 +153,16 @@ net use
 
 The command to deal with mounting/mapping is **net use**
 
-Using `net use` we can connect to other shared folder, on other systems. Many windows machines have a default-share called IPC (Interprocess communication share). It does not contain any files. But we can usually connect to it without authentication. This is called a **null-session**. Although the share does not contain any files it contains a lot of data that is useful for enumeration.
-The Linux-equivalent of `net use` is usually `smbclient`. 
+Using `net use` we can connect to other shared folder, on other systems. Many windows machines have a default-share called IPC \(Interprocess communication share\). It does not contain any files. But we can usually connect to it without authentication. This is called a **null-session**. Although the share does not contain any files it contains a lot of data that is useful for enumeration. The Linux-equivalent of `net use` is usually `smbclient`.
 
-
-```
+```text
 net use \\IP address\IPC$ "" /u:""
 net use \\192.168.1.101\IPC$ "" /u:""
 ```
 
 If you want to map a drive from another network to your filesystem you can do that like this:
 
-```
+```text
 # This will map it to drive z
 net use z: \\192.168.1.101\SYSVOL
 
@@ -177,7 +174,7 @@ Here you map the drive to the letter `z`. If the command is successful you shoul
 
 You enter the z-drive by doing this:
 
-```
+```text
 C:\>z:
 Z:\
 
@@ -186,18 +183,16 @@ Z:\>c:
 C:\
 ```
 
-** Remove a network drive - umount it**
+ **Remove a network drive - umount it**
 
 First leave the drive if you are in it:
 
-```
+```text
 c:
 net use z: /del
 ```
 
+## References and Stuff <a id="references-and-stuff"></a>
 
-# References and Stuff
-
-This might come in handy for the linux-users: http://www.lemoda.net/windows/windows2unix/windows2unix.html
-
+This might come in handy for the linux-users: [http://www.lemoda.net/windows/windows2unix/windows2unix.html](http://www.lemoda.net/windows/windows2unix/windows2unix.html)
 
