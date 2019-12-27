@@ -1,4 +1,8 @@
-### Assembly \(x86\)
+# Assembly
+
+
+
+#### Assembly \(x86\) <a id="assembly-x86"></a>
 
 remember Intel Syntax:
 
@@ -6,9 +10,9 @@ remember Intel Syntax:
 
 Move value from ESP \(stack pointer\) to EBP\(base pointer\) **then** subtract 8 from ESP and store the value in ESP
 
-`mov    ebp,esp`
+`mov ebp,esp`
 
-`sub    esp,0x8`
+`sub esp,0x8`
 
 `cmp`compares values
 
@@ -18,7 +22,7 @@ anything staring with a j is a jump \(depending on the result of a comparison\),
 
 Below will load the familiar address of EBP minus 4 into the EAX register. Unlike mov which moves the content to the location lea moves the address to the location
 
-`lea      eax,[ebp-4]`
+`lea eax,[ebp-4]`
 
 Use often before an increment instruction to increment a variable for a loop
 
@@ -26,59 +30,59 @@ use `gcc -g program.c -o whatever`
 
 the -g option gives the debugger the source code. Only useful if you have it obviously.
 
-gdb -q whatever        \#starts gdb on the whatever file and starts in quiet mode, gets rid of intro messages
+gdb -q whatever \#starts gdb on the whatever file and starts in quiet mode, gets rid of intro messages
 
-\(gdb\) break main   \#sets a breakpoint on the main function
+\(gdb\) break main \#sets a breakpoint on the main function
 
-\(gdb\) run                \#starts the program which stops at the breakpoint
+\(gdb\) run \#starts the program which stops at the breakpoint
 
-\(gdb\) info variables  \#shows all variables and their address
+\(gdb\) info variables \#shows all variables and their address
 
-\(gdb\) x/4xb &&lt;variable name&gt;    \#examines dword \(32 bits / 4 bytes\) of the address of the named variable
+\(gdb\) x/4xb &&lt;variable name&gt; \#examines dword \(32 bits / 4 bytes\) of the address of the named variable
 
-\(gdb\) x/4xb &lt;variable address&gt;   \#examines the dword \(32 bits / 4 bytes\) the value of the variable
+\(gdb\) x/4xb &lt;variable address&gt; \#examines the dword \(32 bits / 4 bytes\) the value of the variable
 
-\(gdb\) info register eip    \#provides the eip value
+\(gdb\) info register eip \#provides the eip value
 
-\(gdb\) x/10i $eip      \#examins the value of the next 10 instructions after EIP, useful for seeinng how a program starts
+\(gdb\) x/10i $eip \#examins the value of the next 10 instructions after EIP, useful for seeinng how a program starts
 
-\(gdb\) x/i $eip      \#examines the value of eip as hexadecimal
+\(gdb\) x/i $eip \#examines the value of eip as hexadecimal
 
 \(gdb\) x/32x $esp \#examines the next 32 after esp
 
-\(gdb\) x/x $ebp   \#examines the ebp location
+\(gdb\) x/x $ebp \#examines the ebp location
 
-\(gdb\) nexti        \#steps through the program to the next instruction
+\(gdb\) nexti \#steps through the program to the next instruction
 
-\(gdb\) info register eip    \#doing this again shows us the new value after step
+\(gdb\) info register eip \#doing this again shows us the new value after step
 
-\(gdb\) x/i $eip      \#doing this again examines the new value of eip as hexadecimal after step
+\(gdb\) x/i $eip \#doing this again examines the new value of eip as hexadecimal after step
 
-\(gdb\) set $eax = 10   \#changes the value of eax to 10
+\(gdb\) set $eax = 10 \#changes the value of eax to 10
 
-\(gdb\) set $cool = 65   \#sets a convienece variable while debugging
+\(gdb\) set $cool = 65 \#sets a convienece variable while debugging
 
-\(gdb\) info functions  \#shows functions available to use
+\(gdb\) info functions \#shows functions available to use
 
-\(gdb\) call examplefunction \(input1, input2\)  \# calls a specific function
+\(gdb\) call examplefunction \(input1, input2\) \# calls a specific function
 
-\(gdb\) b \*0x0804861A   \#puts a breakpoint at address 0x0804861A
+\(gdb\) b \*0x0804861A \#puts a breakpoint at address 0x0804861A
 
-\(gdb\) checksec   \#determines what security is enabled
+\(gdb\) checksec \#determines what security is enabled
 
-\(gdb\) disassemble main   \#disassembles the main function
+\(gdb\) disassemble main \#disassembles the main function
 
-\(gdb\) del    \#removes all previously created breakpoints
+\(gdb\) del \#removes all previously created breakpoints
 
 **Note**
 
 **gets & strcpy** functions are vulnerable to overflows
 
-check if ASLR is enabled on the host, execute \#ldd /bin/executable \| grep libc   \(if address stays the same then not enabled\)
+check if ASLR is enabled on the host, execute \#ldd /bin/executable \| grep libc \(if address stays the same then not enabled\)
 
-### Change values within executable
+#### Change values within executable <a id="change-values-within-executable"></a>
 
-```
+```text
 if already in gdb and you see a test eax, eax 
 we can modify the value to make this true
 
@@ -92,7 +96,7 @@ set a breakpoint at the test instruction
 (gdb) ni  #to continue now
 ```
 
-### View function calls \(useful when asking for passwords\)
+#### View function calls \(useful when asking for passwords\) <a id="view-function-calls-useful-when-asking-for-passwords"></a>
 
 best one so far is simply nm
 
@@ -126,17 +130,17 @@ or
 
 radare
 
-### Notes
+#### Notes <a id="notes"></a>
 
 The values between ebp \(bottom of stack frame\) and esp \(top of stack frame\) is the stack
 
-#### **More Random Notes**
+**More Random Notes**
 
 Typically DWORD PTR is setting a variable
 
 For example:
 
-```
+```text
 mov DWORD PTR [esp+0x5c], 0x0   #this is setting a variable to 0
 ```
 
@@ -162,25 +166,15 @@ ret:
 
 * Same as "`pop eip`"
 
-### Determine the entry point address when unknown
+#### Determine the entry point address when unknown <a id="determine-the-entry-point-address-when-unknown"></a>
 
 i.e. Don't know the name of the "main" / starting function
 
-```
+```text
 within gdb
 
 (gdb) shell readelf -h <name of the program>
 
 :this will indicate the entry point address, so you can now setup a break point from that address
 ```
-
-### References
-
-[https://killyp.com/2018/02/25/ctf-tamuctf-2018-pwn1/](https://killyp.com/2018/02/25/ctf-tamuctf-2018-pwn1/)
-
-[https://www.youtube.com/watch?v=T03idxny9jE](https://www.youtube.com/watch?v=T03idxny9jE)
-
-hacking the art of exploitation
-
-[https://pen-testing.sans.org/blog/2018/12/11/using-gdb-to-call-random-functions](https://pen-testing.sans.org/blog/2018/12/11/using-gdb-to-call-random-functions)
 
