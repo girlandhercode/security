@@ -62,7 +62,7 @@
     * [Common Web Services](vulnerability-analysis/http-s-web-vulnerabilities/common-web-services.md)
   * [Server-Side Vulnerabilities](vulnerability-analysis/server-side-vulnerabilities/README.md)
     * [Port Knocking](vulnerability-analysis/server-side-vulnerabilities/port-knocking.md)
-    * [Common ports](vulnerability-analysis/server-side-vulnerabilities/common-ports.md)
+    * [Common Ports](vulnerability-analysis/server-side-vulnerabilities/common-ports.md)
 * [Exploitation](exploitation/README.md)
   * [Fuzzer](exploitation/fuzzer.md)
   * [Evading WAF](exploitation/evading-waf.md)
