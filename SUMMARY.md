@@ -126,4 +126,7 @@
   * [Stegonopgraphy](forensics/stegonopgraphy.md)
 * [WiFi](wifi.md)
 * [Physical Access](physical-access.md)
+* [Reporting](reporting/README.md)
+  * [Template](reporting/template.md)
+  * [Tools](reporting/tools.md)
 
