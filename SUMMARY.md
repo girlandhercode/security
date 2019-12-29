@@ -48,6 +48,7 @@
       * [Broken Authentication or Session Management](vulnerability-analysis/http-s-web-vulnerabilities/attacking-the-user/broken-authentication-or-session-management.md)
       * [ClickJacking](vulnerability-analysis/http-s-web-vulnerabilities/attacking-the-user/clickjacking.md)
     * [Attacking the System](vulnerability-analysis/http-s-web-vulnerabilities/attacking-the-system/README.md)
+      * [Command Execution](vulnerability-analysis/http-s-web-vulnerabilities/attacking-the-system/command-execution.md)
       * [Bypass File Upload Filtering](vulnerability-analysis/http-s-web-vulnerabilities/attacking-the-system/bypass-file-upload-filtering.md)
       * [Cookies](vulnerability-analysis/http-s-web-vulnerabilities/attacking-the-system/cookies.md)
       * [Command Injection](vulnerability-analysis/http-s-web-vulnerabilities/attacking-the-system/command-injection.md)
