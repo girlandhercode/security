@@ -109,3 +109,15 @@ This can be done like this:
 cat $(locate 646.c | tail -n 1)
 ```
 
+## Piping stdout to clipboard 
+
+Useful when you have no GUI available and need to pipe contents or output of commands to the clipboard.
+
+`apt-get install xsel`
+Now, edit ~/.bash_aliases
+```
+alias copy='xsel -ib'
+```
+Restart terminal, now pipe anything to clipboard with:
+`cat file.txt | copy`
+
