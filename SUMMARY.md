@@ -79,6 +79,7 @@
   * [Dirty Cow](exploitation/dirty-cow.md)
   * [Generate Shellcode](exploitation/generate-shellcode.md)
   * [Shellz](exploitation/shellz/README.md)
+    * [Reverse Shells](exploitation/shellz/reverse-shells.md)
     * [Webshellz](exploitation/shellz/webshellz.md)
   * [Social Engineering - Phishing](exploitation/social-engineering-phishing.md)
 * [Post-Exploitation](post-exploitation/README.md)
