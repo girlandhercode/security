@@ -1,8 +1,10 @@
 # Introduction
 
-This book is a collection of notes that I have picked up doing numerous CTFs. Its also a refence for general IT Security.
+This gitbook will serve as my complete pentest cheatsheet. I try to make it a habit to insert new stuff as soon as i learn. I've tried to catagorize everything naturally, but we all know that's not as easy. Some stuff might occur on several instances. If you want to make a contribution or become a member of the project, contact me.
+
+A lot of these techniques are stuff that I have used on different CTF's and mostly hackthebox. 
 
 This is heavily inspired by xapax and you can read his book on [https://xapax.gitbooks.io/security/content/](https://xapax.gitbooks.io/security/content/).
 
-I've forked his book and made updates from CTF challenges and articles I've come across. I add items as I come across them so they may not be accurate and the shorthand may not make sense. Also the order and placement of topics may seem random. I make no claim that there is a method to my madness. All code additions have not been tested so use at your own risk. I attempt to the best of my ability to add sources for information I come across, if you spot content and I have not added it to the references section please let me know.
+
 
