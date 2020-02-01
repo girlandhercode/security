@@ -101,6 +101,7 @@
   * [Bypassing Anti-Virus](post-exploitation/bypassing-anti-virus.md)
   * [Escaping Restricted Shells](post-exploitation/escaping-restricted-shells.md)
   * [Privilege Escalation - Windows](post-exploitation/privilege-escalation-windows/README.md)
+    * [Password spraying](post-exploitation/privilege-escalation-windows/password-spraying.md)
     * [JuicyPotato](post-exploitation/privilege-escalation-windows/juicypotato.md)
     * [DLL Injections](post-exploitation/privilege-escalation-windows/dll-injections.md)
     * [Manual Enumeration](post-exploitation/privilege-escalation-windows/manual-enumeration/README.md)
