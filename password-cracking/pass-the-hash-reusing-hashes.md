@@ -10,7 +10,7 @@ Pass the hash is a suite of different tools.
 
 ### SMB <a id="smb"></a>
 
-So in order to use pass the hash we first need to put the hash in a env variable using the export command:
+So in order to u se pass the hash we first need to put the hash in a env variable using the export command:
 
 So we will authenticate against a smb-service.
 
